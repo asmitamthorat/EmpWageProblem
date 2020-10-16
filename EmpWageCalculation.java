@@ -1,16 +1,22 @@
 public class EmpWageCalculation {
     public static void main(String args[]){
         int wagePerHr=20;
-        int isEmpPresent=1;
-        int hrForDay=8;
-        int empWage;
-        double empCheck=Math.floor(Math.random()*10)%2;
-        if(empCheck==isEmpPresent){
-            empWage=wagePerHr*hrForDay;
-            System.out.println("employee wage :"+empWage);
+        int partTimeEmp=1;
+        int fullTimeEmp=2;
+        int empHrs=0;
+        int empWage=0;
+        double empCheck=Math.floor(Math.random()*10)%3;
+        if(empCheck==partTimeEmp){
+           empHrs=4;
+        }
+        else if (empCheck==fullTimeEmp){
+            empHrs=8;
         }
         else{
-            System.out.println("employee is absent");
+            empHrs=0;
         }
+
+        empWage=wagePerHr*empHrs;
+        System.out.println("employee wage :"+empWage);
     }
 }
